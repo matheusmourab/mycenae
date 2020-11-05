@@ -485,12 +485,14 @@ type RawDataTextPoint struct {
 
 // RawDataQueryNumberPoints - the metadata and value results
 type RawDataQueryNumberPoints struct {
+	TSid     string               `json:"tsid"`
 	Metadata RawDataMetadata      `json:"metadata"`
 	Values   []RawDataNumberPoint `json:"points"`
 }
 
 // RawDataQueryTextPoints - the metadata and text results
 type RawDataQueryTextPoints struct {
+	TSid     string             `json:"tsid"`
 	Metadata RawDataMetadata    `json:"metadata"`
 	Texts    []RawDataTextPoint `json:"points"`
 }

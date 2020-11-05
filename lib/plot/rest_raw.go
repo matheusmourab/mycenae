@@ -216,6 +216,7 @@ func (plot *Plot) getRawTextPoints(qp *queryParameters) (interface{}, uint32, go
 		total++
 
 		rawTextPoint := RawDataQueryTextPoints{
+			TSid:     tsid,
 			Metadata: qp.metadataMap[tsid],
 			Texts:    make([]RawDataTextPoint, numPoints),
 		}
@@ -257,6 +258,7 @@ func (plot *Plot) getLastRawTextPoint(qp *queryParameters) (interface{}, uint32,
 	for tsid, point := range textTSMap {
 
 		mainResult.Results[i] = RawDataQueryTextPoints{
+			TSid:     tsid,
 			Metadata: qp.metadataMap[tsid],
 			Texts:    make([]RawDataTextPoint, 1),
 		}
@@ -301,6 +303,7 @@ func (plot *Plot) getRawNumberPoints(qp *queryParameters) (interface{}, uint32, 
 		total++
 
 		rawNumberPoint := RawDataQueryNumberPoints{
+			TSid:     tsid,
 			Metadata: qp.metadataMap[tsid],
 			Values:   make([]RawDataNumberPoint, numPoints),
 		}
@@ -342,6 +345,7 @@ func (plot *Plot) getLastRawNumberPoint(qp *queryParameters) (interface{}, uint3
 	for tsid, point := range numberTSMap {
 
 		mainResult.Results[i] = RawDataQueryNumberPoints{
+			TSid:     tsid,
 			Metadata: qp.metadataMap[tsid],
 			Values:   make([]RawDataNumberPoint, 1),
 		}
